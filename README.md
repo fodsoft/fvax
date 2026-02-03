@@ -17,7 +17,7 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 
 ## 🚀 Setup guide
 > [!NOTE]
-> I recommend using MSYS2 to compile or run FVAX on Windows.
+> I recommend using [**MSYS2**](https://www.msys2.org/) to compile or run FVAX on Windows.
 
 0. Install [**FFmpeg**](https://github.com/FFmpeg/FFmpeg) if you don’t already have it.
 
