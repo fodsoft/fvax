@@ -29,11 +29,11 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 
 4. Use `fvax encode <input_video> <output.fvax>` to convert any video file into the FVAX container.
 
-5. To convert a `.fvax` file back into a standard format, use `fvax decode <input.fvax> <output_video>`
+5. To convert a **.fvax** file back into a standard format, use `fvax decode <input.fvax> <output_video>`
 
 ### 🪠 Use examples
 > [!TIP]
-> You can run `fvax --help` on Linux or `fvax /help` on Windows to view all commands.
+> You can run `fvax /help` on Windows or `fvax --help` on Linux to view all commands.
 
 - To encode: `fvax encode example.mkv example.fvax`
 - To decode: `fvax decode example.fvax example.mkv`
