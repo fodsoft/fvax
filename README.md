@@ -38,13 +38,13 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 - To encode: `fvax encode example.mkv example.fvax`
 - To decode: `fvax decode example.fvax example.mkv`
 
-### 🤖 How to compile?
+### 🤖 How to compile
 > [!IMPORTANT]
 > You can also install the precompiled version directly.
 
 0. Install [**GCC**](https://gcc.gnu.org/) if you don’t already have it.
 
-1. Clone the repo and enter to the folder using a terminal.
+1. Clone the repo and enter the folder using a terminal.
 
 2. Use `make` to compile normally.
 
