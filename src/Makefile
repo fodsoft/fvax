@@ -21,36 +21,19 @@ OBJ = $(SRC:.c=.o)
 CC ?= gcc
 CFLAGS = -std=c23 -Wall -Wextra -Werror -O2 -D_FILE_OFFSET_BITS=64
 
-WIN_EXE = $(NAME).exe
-LINUX_EXE = $(NAME)
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
-ifeq ($(OS),Windows_NT)
-	EXE = $(WIN_EXE)
-else
-	EXE = $(LINUX_EXE)
-endif
-
-all: $(EXE)
-
-$(WIN_EXE): $(OBJ)
-	$(CC) $(CFLAGS) -o $(WIN_EXE) $(OBJ)
-
-win:
-	$(MAKE) $(WIN_EXE)
-
-$(LINUX_EXE): $(OBJ)
-	$(CC) $(CFLAGS) -o $(LINUX_EXE) $(OBJ)
-	@if [ -f "$(LINUX_EXE).exe" ]; then mv "$(LINUX_EXE).exe" "$(LINUX_EXE)"; fi
-
-linux: $(LINUX_EXE)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ) *.fvaxtmp
 
 fclean: clean
-	rm -f $(WIN_EXE) $(LINUX_EXE)
+	rm -f $(NAME) $(NAME).exe
 
-re: fclean all
+re: fclean $(NAME)
 
-.PHONY: all win linux clean fclean re
+.PHONY: clean fclean re
 # FODSOFT(TM). Neo Fodere de Frutos. All rights reserved.
