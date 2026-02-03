@@ -6,7 +6,7 @@ FVAX (Fod Video-Audio eXperience) is an audio and video container format written
 
 FVAX uses <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/AV1_logo_2018.svg/1200px-AV1_logo_2018.svg.png" width="38" height="auto"> (***AV1***) as its video codec and <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Opus_logo2.svg/250px-Opus_logo2.svg.png" width="48" height="auto"> (***Opus***) as its audio codec.
 
-The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an **Ogg Opus (.opus)** separately, and then concatenating them inside the FVAX structure.
+The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an **Ogg Opus (.opus)** separately, and then concatenating them inside the FVAX header structure.
 
 ## 📚 Dependencies
 ### For usage:
@@ -16,10 +16,37 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 - [**GCC**](https://gcc.gnu.org/) (15 or later recommended)
 
 ## 🚀 Setup guide
->[!NOTE]
->I recommend using MSYS2 to compile or use FVAX on Windows.
+> [!NOTE]
+> I recommend using MSYS2 to compile or run FVAX on Windows.
 
+0. Install [**FFmpeg**](https://github.com/FFmpeg/FFmpeg) if you don’t already have it.
 
+1. Download and extract **fvax-{version}-{platform}.7z**
+
+2. Open the folder containing your video using a **terminal (PowerShell, CMD, zsh, etc.)**.
+
+3. Use `fvax encode <input_video> <output.fvax>` to convert any video file into the FVAX container.
+
+4. To convert a `.fvax` file back into a standard format, use `fvax decode <input.fvax> <output_video>`
+
+### 🪠 Use examples
+> [!TIP]
+> You can run `fvax --help` on Linux or `fvax /help` on Windows to view all commands.
+
+- To encode: `fvax encode example.mkv example.fvax`
+- To decode: `fvax decode example.fvax example.mkv`
+
+### 🤖 How to compile?
+> [!IMPORTANT]
+> You can also install the precompiled version directly.
+
+0. Install [**GCC**](https://gcc.gnu.org/) if you don’t already have it.
+
+1. Use `make` to compile normally, `make win` to force a Windows build, and `make linux` to force a Linux build.
+
+2. If an error occurs when running **make**, ensure GCC is installed and updated with support for C23. If needed, you can change the compiler and flags in the **Makefile**.
+
+3. That’s it — the executable is ready to use.
 
 ## 📂 Source code structure
 File | Description |
