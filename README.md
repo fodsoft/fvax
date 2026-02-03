@@ -23,7 +23,7 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 
 1. Download and extract **fvax-{version}-{platform}.7z**
 
-2. Open the folder containing your video using a **terminal (PowerShell, CMD, zsh, etc.)**.
+2. Open the folder containing your video using a **terminal (PowerShell, CMD, zsh...).**.
 
 3. Use `fvax encode <input_video> <output.fvax>` to convert any video file into the FVAX container.
 
