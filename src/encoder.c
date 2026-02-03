@@ -45,7 +45,7 @@ int fvax_encode(const char *ruta_entrada, const char *ruta_salida)
 
 	snprintf(comando, sizeof(comando),
 		"ffprobe -v error -select_streams v:0 -show_entries stream=codec_type -of csv=p=0 \"%s\" > fvax_hasvideo.fvaxtmp", ruta_entrada);
-	(void)system(comando);
+	system(comando);
 	FILE *archivo_metadatos = fopen("fvax_hasvideo.fvaxtmp", "r");
 	if (archivo_metadatos)
 	{
@@ -94,16 +94,16 @@ int fvax_encode(const char *ruta_entrada, const char *ruta_salida)
 	{
 		snprintf(comando, sizeof(comando),
 			"ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0:s=x \"%s\" > fvax_res.fvaxtmp", ruta_entrada);
-		(void)system(comando);
+		system(comando);
 		archivo_metadatos = fopen("fvax_res.fvaxtmp", "r");
 		if (archivo_metadatos)
 		{
-			(void)fscanf(archivo_metadatos, "%dx%d", &ancho, &alto);
+			fscanf(archivo_metadatos, "%dx%d", &ancho, &alto);
 			fclose(archivo_metadatos);
 		}
 		snprintf(comando, sizeof(comando),
 			"ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of csv=p=0 \"%s\" > fvax_fps.fvaxtmp", ruta_entrada);
-		(void)system(comando);
+		system(comando);
 		archivo_metadatos = fopen("fvax_fps.fvaxtmp", "r");
 		if (archivo_metadatos)
 		{
@@ -116,11 +116,11 @@ int fvax_encode(const char *ruta_entrada, const char *ruta_salida)
 		}
 		snprintf(comando, sizeof(comando),
 			"ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 \"%s\" > fvax_frames.fvaxtmp", ruta_entrada);
-		(void)system(comando);
+		system(comando);
 		archivo_metadatos = fopen("fvax_frames.fvaxtmp", "r");
 		if (archivo_metadatos)
 		{
-			(void)fscanf(archivo_metadatos, "%u", &total_frames);
+			fscanf(archivo_metadatos, "%u", &total_frames);
 			fclose(archivo_metadatos);
 		}
 		if (total_frames == 0)
@@ -130,11 +130,11 @@ int fvax_encode(const char *ruta_entrada, const char *ruta_salida)
 	{
 		snprintf(comando, sizeof(comando),
 			"ffprobe -v error -select_streams a:0 -show_entries stream=sample_rate,channels -of csv=p=0 \"%s\" > fvax_audio.fvaxtmp", ruta_entrada);
-		(void)system(comando);
+		system(comando);
 		archivo_metadatos = fopen("fvax_audio.fvaxtmp", "r");
 		if (archivo_metadatos)
 		{
-			(void)fscanf(archivo_metadatos, "%u,%hu", &frecuencia_audio, &canales_audio);
+			fscanf(archivo_metadatos, "%u,%hu", &frecuencia_audio, &canales_audio);
 			fclose(archivo_metadatos);
 		}
     }
