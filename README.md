@@ -46,7 +46,7 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 
 1. Use `make` to compile normally.
 
-2. If an error occurs when running **make**, ensure GCC is installed and updated with support for C23. If needed, you can change the compiler to clang and remove flags in the **Makefile**.
+2. If an error occurs when running **make**, ensure GCC is installed and updated. If needed, you can change the compiler to clang and remove flags in the **Makefile**.
 
 3. That’s it — the executable is ready to use.
 
