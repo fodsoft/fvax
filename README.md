@@ -25,7 +25,7 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 
 2. Add the FVAX folder containing the FVAX executable to your system PATH. If you don’t do this, both the executable and the video file must be in the same folder, and you’ll need to replace `fvax` with `.\fvax` on Windows or `./fvax` on Linux when running commands.
 
-3. Open the folder containing your video using a **terminal (PowerShell, CMD, zsh...).**.
+3. Open the folder containing your video using a terminal.
 
 4. Use `fvax encode <input_video> <output.fvax>` to convert any video file into the FVAX container.
 
@@ -44,9 +44,9 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 
 0. Install [**GCC**](https://gcc.gnu.org/) if you don’t already have it.
 
-1. Use `make` to compile normally.
+1. Clone the repo and enter to the folder using a terminal.
 
-2. If an error occurs when running **make**, ensure GCC is installed and updated. If needed, you can change the compiler to clang and remove flags in the **Makefile**.
+2. Use `make` to compile normally.
 
 3. That’s it — the executable is ready to use.
 
