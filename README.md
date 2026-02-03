@@ -10,7 +10,7 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 
 ## 📚 Dependencies
 ### For usage:
-- [**FFmpeg**](https://github.com/FFmpeg/FFmpeg) (5.0 or later recommended)
+- [**FFmpeg**](https://ffmpeg.org) (5.0 or later recommended)
 
 ### For compiling:
 - [**GCC**](https://gcc.gnu.org/) (15 or later recommended)
@@ -19,7 +19,7 @@ The FVAX encoder works by using **FFmpeg** to create a **WebM (.webm)** and an *
 > [!NOTE]
 > I recommend using [**MSYS2**](https://www.msys2.org/) to compile or run FVAX on Windows.
 
-0. Install [**FFmpeg**](https://github.com/FFmpeg/FFmpeg) if you don’t already have it.
+0. Install [**FFmpeg**](https://ffmpeg.org) if you don’t already have it.
 
 1. Download and extract **fvax-{version}-{platform}.7z**
 
