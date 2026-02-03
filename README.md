@@ -64,7 +64,7 @@ FVAX is under the ***AGPLv3*** license. This means that if you want to distribut
 
 For more details, click [here](https://raw.githubusercontent.com/neofodere/fvax/refs/heads/main/LICENSE).
 
-## 
+<br>
 
 **FVAX and all related titles and logos are property of FODSOFT™. Néo Foderé de Frutos.**
 
