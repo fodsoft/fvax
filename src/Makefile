@@ -19,7 +19,7 @@ SRC =	fvax.c \
 OBJ = $(SRC:.c=.o)
 
 CC ?= gcc
-CFLAGS = -w -O1 -D_FILE_OFFSET_BITS=64
+CFLAGS = -w -s -O2 -D_FILE_OFFSET_BITS=64
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
